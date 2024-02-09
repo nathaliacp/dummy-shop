@@ -1,0 +1,62 @@
+<ng-container *transloco="let text">
+	<header class="header">
+		<div class="header__title__toggle">
+			<h1 routerLink="/">Dummy <span>Shop</span></h1>
+
+			<button class="toggle__button">
+				<svg class="icon icon-menu">
+					<use xlink:href="assets\icons.svg#icon-menu"></use>
+				</svg>
+			</button>
+		</div>
+
+		<div class="header__search__form">
+			<form>
+				<input
+					type="text"
+					name="Search"
+					id="search"
+					class="header__search__form__input"
+					placeholder="{{ text('header.placeholder') }}" />
+				<button type="button" class="header__search__form__btn">
+					<svg class="icon icon-search">
+						<use xlink:href="assets\icons.svg#icon-search"></use>
+					</svg>
+				</button>
+			</form>
+		</div>
+
+		<div class="header__buttons">
+			<select
+				id="langType"
+				[(ngModel)]="selectedLang"
+				(change)="onChangeLanguage()"
+				class="header__buttons__lang">
+				<option value="pt">PT</option>
+				<option value="en">EN</option>
+			</select>
+
+			<div class="header__buttons__theme">
+				<label class="switch">
+					<input type="checkbox" class="darkModeBtn" />
+					<span class="slider round"></span>
+				</label>
+			</div>
+
+			<button type="button" class="header__buttons__cart" routerLink="/cart">
+				<svg class="icon icon-cart">
+					<use xlink:href="assets\icons.svg#icon-cart"></use>
+				</svg>
+			</button>
+
+			<button
+				type="button"
+				class="header__buttons__login"
+				routerLink="/auth/login">
+				<svg class="icon icon-user">
+					<use xlink:href="assets\icons.svg#icon-user"></use>
+				</svg>
+			</button>
+		</div>
+	</header>
+</ng-container>
