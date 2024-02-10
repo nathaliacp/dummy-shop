@@ -195,6 +195,10 @@
       }
     }
 
+		&__buttons {
+			margin-right: 1rem;
+		}
+
     .icon:hover {
       color: var(--icon-color);
       fill: currentColor;
